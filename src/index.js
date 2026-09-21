@@ -146,7 +146,7 @@ async function main() {
             }
 
             case "8": {
-                console.log("-------- Trier par progression décroissante --------");
+                console.log("-------- Trier par progression décroissante --------"); 
                 const resultats = trierParProgression(apprenants);
                 for (const apprenant of resultats) {
                     const stats = calculerProgression(apprenant);

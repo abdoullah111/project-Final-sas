@@ -29,6 +29,8 @@ function ajouterApprenant(apprenants, nouvelApprenant) {
     };
     apprenants.push(apprenant);
     return { succes: true, message: `Apprenant ${apprenant.nomComplet} ajouté avec succès.` };
+
+
 }
 
 function validerResultat(resultat) {
@@ -38,8 +40,8 @@ function validerResultat(resultat) {
         return { valide: false, message: "Le jour doit être un nombre compris entre 1 et 7." };
     }
 
-    if (!Number.isFinite(exercicesTermines) || !Number.isFinite(totalExercices)) {
-        return { valide: false, message: "Les exercices doivent être des nombres." };
+    if (!Number.isInteger(exercicesTermines) || !Number.isInteger(totalExercices)) {
+        return { valide: false, message: "Les exercices doivent être des nombres entiers." };
     }
 
     if (exercicesTermines < 0 || totalExercices < 0) {
@@ -97,7 +99,7 @@ function enregistrerResultat(apprenants, id, resultat) {
             resultatExistant = r;
             break;
         }
-    }
+    }  
 
     if (resultatExistant) {
         resultatExistant.exercicesTermines = resultat.exercicesTermines;
@@ -151,7 +153,7 @@ function filtrerParNiveau(apprenants, niveau) {
         } else {
             niveauApprenant = "À renforcer";
         }
-        if (niveauApprenant === niveau) {
+        if (niveauApprenant === niveau){
             resultat.push(apprenant);
         }
     }

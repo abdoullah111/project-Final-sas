@@ -72,3 +72,12 @@ const apprenantVide = {
 };
 const statsVide = calculerProgression(apprenantVide);
 console.log(statsVide);
+
+console.log("\n=== Scénario 9 (cas invalide) : Exercices avec nombre décimal ===");
+const resultat9 = validerResultat({
+    jour: 3,
+    exercicesTermines:-1,
+    totalExercices: 20,
+    challengeTermine: true
+});
+console.log(resultat9);
